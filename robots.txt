@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Google's advertising crawlers need access to serve relevant ads
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+Sitemap: https://giftcitytrader.com/sitemap.xml

@@ -3,7 +3,18 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Gift City Trader — Master the Market</title>
+<title>Gift City Trader — Practical Stock Market Course &amp; Free Trading Guides</title>
+<meta name="description" content="Learn the Indian stock market from basics to F&amp;O — technical analysis, options, risk management and trading psychology. Free in-depth guides plus a practical 5-week course."/>
+<link rel="canonical" href="https://giftcitytrader.com/index.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Gift City Trader"/>
+<meta property="og:title" content="Gift City Trader — Practical Stock Market Education"/>
+<meta property="og:description" content="Learn the Indian stock market from basics to F&amp;O, with free long-form guides and a practical 5-week course."/>
+<meta property="og:url" content="https://giftcitytrader.com/index.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Gift City Trader — Practical Stock Market Education"/>
+<meta name="twitter:description" content="Free trading guides plus a practical 5-week Indian stock market course."/>
+<meta name="theme-color" content="#080C14"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,300&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
@@ -853,7 +864,81 @@ footer{
   .stat-box{border-right:1px solid var(--border);border-bottom:1px solid var(--border);}
   .sticky-bar{flex-direction:column;gap:8px;text-align:center;}
 }
+
+/* ---- site navigation menu (added for full-site structure) ---- */
+.nav-menu{display:flex;align-items:center;gap:24px;list-style:none;margin:0 auto 0 40px;}
+.nav-menu a{color:var(--text);font-size:14px;font-weight:500;text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;}
+.nav-menu a:hover,.nav-menu a[aria-current="page"]{color:var(--gold);border-bottom-color:var(--gold);}
+.nav-toggle{display:none;background:none;border:1px solid var(--border);color:var(--gold);font-size:20px;line-height:1;padding:6px 11px;cursor:pointer;border-radius:4px;}
+@media(max-width:900px){
+  nav{position:sticky;}
+  .nav-toggle{display:block;order:3;}
+  .nav-menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:flex-start;gap:0;background:var(--dark2);border-bottom:1px solid var(--border);padding:8px 5% 16px;margin:0;}
+  .nav-menu.open{display:flex;}
+  .nav-menu li{width:100%;}
+  .nav-menu a{display:block;width:100%;padding:11px 0;border-bottom:1px solid var(--border);}
+  .nav-menu a:hover,.nav-menu a[aria-current="page"]{border-bottom-color:var(--border);}
+}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--gold);color:var(--dark);padding:10px 18px;font-weight:700;z-index:999;}
+.skip-link:focus{left:8px;top:8px;}
+
+/* ---- learn / articles teaser section ---- */
+.learn-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;margin-top:36px;}
+.learn-card{background:var(--card);border:1px solid var(--border);padding:24px 22px;display:flex;flex-direction:column;transition:border-color .25s,transform .25s;}
+.learn-card:hover{border-color:rgba(255,184,0,.45);transform:translateY(-3px);}
+.learn-card .tag{display:inline-block;background:rgba(255,184,0,.1);border:1px solid rgba(255,184,0,.3);color:var(--gold);font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:3px 9px;align-self:flex-start;}
+.learn-card h3{font-size:18px;line-height:1.35;margin:12px 0 9px;}
+.learn-card h3 a{color:var(--white);text-decoration:none;}
+.learn-card h3 a:hover{color:var(--gold);}
+.learn-card p{font-size:14px;color:var(--muted);flex:1;}
+.learn-more{display:inline-block;margin-top:32px;border:1px solid var(--border);color:var(--text);font-weight:600;padding:12px 26px;text-decoration:none;transition:border-color .2s,color .2s;}
+.learn-more:hover{border-color:var(--gold);color:var(--gold);}
+
+/* ---- ad slots ---- */
+.ad-slot{margin:36px auto;text-align:center;max-width:1100px;padding:0 5%;}
+.ad-slot::before{content:'Advertisement';display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+
+/* ---- risk banner ---- */
+.risk-banner{background:var(--dark2);border-top:1px solid var(--border);padding:26px 5%;}
+.risk-banner-inner{max-width:1100px;margin:0 auto;font-size:12.5px;color:var(--muted);line-height:1.7;}
+.risk-banner-inner strong{color:var(--red);}
+.risk-banner-inner a{color:var(--gold);}
+
+/* ---- expanded footer ---- */
+.footer-cols{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px;text-align:left;}
+.footer-about{font-size:13.5px;color:var(--muted);max-width:340px;margin-top:12px;}
+.footer-cols h4{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--white);margin-bottom:14px;}
+.footer-cols ul{list-style:none;}
+.footer-cols li{margin-bottom:9px;}
+.footer-cols li a{color:var(--muted);font-size:14px;text-decoration:none;}
+.footer-cols li a:hover{color:var(--gold);}
+.footer-bottom{max-width:1100px;margin:34px auto 0;padding-top:20px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:12.5px;color:var(--muted);}
+@media(max-width:860px){.footer-cols{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.footer-cols{grid-template-columns:1fr;}}
+
+/* ---- cookie consent ---- */
+.cookie-bar{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--dark3);border-top:1px solid var(--border);padding:16px 20px;display:none;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;}
+.cookie-bar.show{display:flex;}
+.cookie-bar p{font-size:13px;color:var(--muted);max-width:660px;margin:0;}
+.cookie-bar a{color:var(--gold);}
+.cookie-btn{background:var(--gold);color:var(--dark);font-weight:700;padding:9px 20px;border:none;cursor:pointer;font-size:13px;font-family:inherit;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);}
+.cookie-btn-ghost{background:none;border:1px solid var(--border);color:var(--text);font-weight:600;padding:8px 18px;cursor:pointer;font-size:13px;font-family:inherit;}
 </style>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Gift City Trader",
+  "url": "https://giftcitytrader.com/",
+  "description": "Practical stock market education for Indian traders and investors — technical analysis, derivatives, risk management and trading psychology.",
+  "email": "contact@giftcitytrader.com",
+  "telephone": "+91-92285-80321",
+  "areaServed": "IN",
+  "sameAs": []
+}
+</script>
 </head>
 <body>
 
@@ -880,10 +965,22 @@ footer{
 </div>
 
 <!-- NAVIGATION -->
+<a class="skip-link" href="#main">Skip to main content</a>
+
 <nav>
-  <div class="nav-logo">GIFT CITY <span>TRADER</span></div>
-  <a class="nav-cta" href="https://wa.me/919228580321?text=Hi%2C%20I%20want%20to%20know%20more%20about%20the%20Stock%20Market%20Course." target="_blank">📲 WhatsApp Now</a>
+  <a class="nav-logo" href="index.html" style="text-decoration:none">GIFT CITY <span>TRADER</span></a>
+  <ul class="nav-menu" id="navLinks">
+    <li><a href="index.html" aria-current="page">Home</a></li>
+    <li><a href="#curriculum">Course</a></li>
+    <li><a href="blog.html">Learn</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
+  <a class="nav-cta" href="https://wa.me/919228580321?text=Hi%2C%20I%20want%20to%20know%20more%20about%20the%20Stock%20Market%20Course." target="_blank" rel="noopener">📲 WhatsApp Now</a>
 </nav>
+
+<main id="main">
 
 <!-- HERO -->
 <section class="hero">
@@ -1265,7 +1362,7 @@ footer{
         <li class="yes">30+ live trading setups</li>
         <li class="yes">Options strategies with full logic</li>
         <li class="yes">3 months personal group access</li>
-        <li class="yes">Fee recovery support</li>
+        <li class="yes">3 months of post-course mentorship</li>
         <li class="yes">Practical — not just theory</li>
         <li class="yes">Lifetime applicable knowledge</li>
       </ul>
@@ -1279,8 +1376,8 @@ footer{
 <div class="guarantee-strip reveal">
   <div class="guarantee-icon">🎯</div>
   <div class="guarantee-text">
-    <h3>We Want You to Recover Your Fee</h3>
-    <p>After the course, you get 3 months in a personal group where we actively help you work toward recovering your course investment. Your success is our reputation.</p>
+    <h3>We Stay With You After the Course</h3>
+    <p>Learning does not end on the last session. For 3 months afterwards you stay in a small mentorship group where you can bring your own charts, ask questions and get your process reviewed. We cannot promise market results — nobody honestly can — but we can make sure you are never left applying this alone.</p>
   </div>
 </div>
 
@@ -1319,10 +1416,10 @@ footer{
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
-        Is the ₹5,000 F&O calls service separate?
+        Do you give buy/sell calls or trading tips?
         <span class="faq-toggle">+</span>
       </div>
-      <div class="faq-a">Yes, the ₹5,000/month F&O calls subscription service is a separate offering. It's ideal for people who want to invest alongside learning, or for those who prefer active trade signals. Contact on WhatsApp for full details on the calls service.</div>
+      <div class="faq-a">No. We are not registered with SEBI as an Investment Adviser or Research Analyst, so we do not give buy, sell or hold recommendations — free or paid, publicly or privately. What we teach is how to build your own view, size it sensibly and know in advance where you are wrong. If independence is the goal, being handed calls works against it.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
@@ -1331,6 +1428,73 @@ footer{
       </div>
       <div class="faq-a">Simple — send a WhatsApp message to +91 92285 80321. Start with WhatsApp first. We'll explain the schedule, batch timing, payment process, and answer any questions you have before you commit.</div>
     </div>
+  </div>
+</section>
+
+
+<div class="ad-slot">
+  <!-- After AdSense approval, create an ad unit and paste its data-ad-slot id below,
+       then remove these comment markers.
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="0000000000"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+</div>
+
+<!-- FREE LEARNING LIBRARY -->
+<section class="curriculum" id="learn">
+  <div class="section-head reveal">
+    <span class="section-label">Free to Read</span>
+    <h2>START LEARNING RIGHT NOW</h2>
+    <p>You do not have to enrol in anything to begin. These in-depth guides are free, contain no buy or
+       sell recommendations, and cover the same ground the course opens with.</p>
+  </div>
+
+  <div class="learn-grid reveal">
+    <article class="learn-card">
+      <span class="tag">Basics</span>
+      <h3><a href="blog/stock-market-basics-india.html">Stock Market Basics in India</a></h3>
+      <p>How the market really works — NSE and BSE, SEBI, demat accounts, order types, the costs nobody
+         mentions, and a sane 90-day plan for a beginner.</p>
+    </article>
+    <article class="learn-card">
+      <span class="tag">Technical Analysis</span>
+      <h3><a href="blog/candlestick-patterns-guide.html">Candlestick Patterns, Properly Explained</a></h3>
+      <p>A candle is a record of a fight. What one encodes, the patterns worth knowing, and the four
+         filters that decide whether a pattern works.</p>
+    </article>
+    <article class="learn-card">
+      <span class="tag">Technical Analysis</span>
+      <h3><a href="blog/support-resistance-explained.html">Support and Resistance</a></h3>
+      <p>Why price levels exist at all, how to draw only the ones that matter, and why false breakouts
+         happen so often on Indian charts.</p>
+    </article>
+    <article class="learn-card">
+      <span class="tag">Options</span>
+      <h3><a href="blog/options-greeks-explained.html">Option Greeks Explained</a></h3>
+      <p>Delta, gamma, theta and vega in plain language — including why you can be right on direction and
+         still watch the premium fall.</p>
+    </article>
+    <article class="learn-card">
+      <span class="tag">Risk Management</span>
+      <h3><a href="blog/risk-management-position-sizing.html">Risk Management &amp; Position Sizing</a></h3>
+      <p>The arithmetic of drawdown, the 1% rule, the sizing formula, and the journal column that
+         actually produces improvement.</p>
+    </article>
+    <article class="learn-card">
+      <span class="tag">Psychology</span>
+      <h3><a href="blog/trading-psychology-discipline.html">Why Traders Break Their Own Rules</a></h3>
+      <p>Revenge trading, cutting winners and FOMO — where they come from, and the structural fixes that
+         work better than willpower.</p>
+    </article>
+  </div>
+
+  <div style="text-align:center">
+    <a class="learn-more" href="blog.html">Browse all 9 guides →</a>
   </div>
 </section>
 
@@ -1353,10 +1517,74 @@ footer{
   <a class="sticky-cta" href="https://wa.me/919228580321?text=Hi%2C%20I%20want%20to%20enroll%20in%20the%20Giftcity%20Trader%20course." target="_blank">📲 WhatsApp to Enroll</a>
 </div>
 
+</main>
+
+<!-- RISK DISCLOSURE -->
+<section class="risk-banner">
+  <div class="risk-banner-inner">
+    <strong>Risk disclosure:</strong> Gift City Trader is a stock market <em>education</em> brand. We are
+    not registered with SEBI as an Investment Adviser or Research Analyst, and nothing on this website is
+    a buy, sell or hold recommendation. Trading and investing in equities, futures and options carries a
+    substantial risk of loss, and a majority of individual derivatives traders in India lose money. Past
+    performance never guarantees future results, and no course can promise a market outcome. Please read
+    our full <a href="disclaimer.html">risk disclaimer</a> before acting on anything you read here.
+  </div>
+</section>
+
 <!-- FOOTER -->
-<footer>
-  <div class="footer-brand">GIFT CITY TRADER</div>
+<footer style="display:block;padding:52px 5% 28px">
+  <div class="footer-cols">
+    <div>
+      <a class="footer-brand" href="index.html" style="text-decoration:none;display:block">GIFT CITY TRADER</a>
+      <p class="footer-about">
+        Practical stock market education for Indian traders and investors — charts, derivatives, risk
+        management and trading psychology, explained in plain language.
+      </p>
+    </div>
+    <div>
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="blog.html">All articles</a></li>
+        <li><a href="blog/stock-market-basics-india.html">Market basics</a></li>
+        <li><a href="blog/candlestick-patterns-guide.html">Candlestick patterns</a></li>
+        <li><a href="blog/options-greeks-explained.html">Option Greeks</a></li>
+        <li><a href="blog/risk-management-position-sizing.html">Risk management</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="#curriculum">Course outline</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy policy</a></li>
+        <li><a href="terms-and-conditions.html">Terms &amp; conditions</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+        <li><a href="refund-policy.html">Refund policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span class="js-year">2026</span> Gift City Trader. All rights reserved.</span>
+    <span>Education only &middot; Not investment advice</span>
+  </div>
 </footer>
+
+<!-- COOKIE / ADS CONSENT -->
+<div class="cookie-bar" id="cookieBar" role="region" aria-label="Cookie notice">
+  <p>
+    We use cookies to run this site and, together with partners such as Google, to measure traffic and
+    show relevant advertising. See our <a href="privacy-policy.html">privacy policy</a> for details.
+  </p>
+  <button class="cookie-btn" id="cookieAccept" type="button">Accept</button>
+  <button class="cookie-btn-ghost" id="cookieDecline" type="button">Decline</button>
+</div>
 
 <script>
 // MODULE TOGGLE
@@ -1394,6 +1622,43 @@ revealEls.forEach(el => observer.observe(el));
 
 // OPEN FIRST MODULE
 document.querySelector('.module-item').classList.add('active');
+
+// MOBILE NAV
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+if(navToggle && navLinks){
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+}
+
+// CURRENT YEAR
+document.querySelectorAll('.js-year').forEach(el => { el.textContent = new Date().getFullYear(); });
+
+// HIDE EMPTY AD PLACEHOLDERS
+document.querySelectorAll('.ad-slot').forEach(el => { if(!el.querySelector('ins')) el.style.display = 'none'; });
+
+// COOKIE / ADS CONSENT
+(function(){
+  const KEY = 'gct_consent_v1';
+  const bar = document.getElementById('cookieBar');
+  if(!bar) return;
+  let stored = null;
+  try { stored = localStorage.getItem(KEY); } catch(e) { stored = 'unavailable'; }
+  if(!stored) bar.classList.add('show');
+  function decide(v){
+    try { localStorage.setItem(KEY, v); } catch(e) {}
+    bar.classList.remove('show');
+  }
+  const ok = document.getElementById('cookieAccept');
+  const no = document.getElementById('cookieDecline');
+  if(ok) ok.addEventListener('click', () => decide('accepted'));
+  if(no) no.addEventListener('click', () => decide('declined'));
+})();
 </script>
 </body>
 </html>

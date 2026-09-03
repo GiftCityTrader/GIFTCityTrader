@@ -1,0 +1,7 @@
+# ads.txt for giftcitytrader.com
+# Authorized Digital Sellers — IAB Tech Lab specification
+#
+# IMPORTANT: replace pub-XXXXXXXXXXXXXXXX below with your own Google AdSense
+# publisher ID (found in AdSense under Account -> Settings -> Account information).
+# The file must stay reachable at https://giftcitytrader.com/ads.txt
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

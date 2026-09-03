@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Option Greeks Explained Simply: Delta, Gamma, Theta and Vega | Gift City Trader</title>
+<meta name="description" content="Delta, gamma, theta and vega explained in plain language for Indian index and stock options — including IV crush, expiry-day gamma, and the rules that follow from each."/>
+<link rel="canonical" href="https://giftcitytrader.com/blog/options-greeks-explained.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Gift City Trader"/>
+<meta property="og:title" content="Option Greeks Explained Simply: Delta, Gamma, Theta and Vega | Gift City Trader"/>
+<meta property="og:description" content="Delta, gamma, theta and vega explained in plain language for Indian index and stock options — including IV crush, expiry-day gamma, and the rules that follow from each."/>
+<meta property="og:url" content="https://giftcitytrader.com/blog/options-greeks-explained.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Option Greeks Explained Simply: Delta, Gamma, Theta and Vega | Gift City Trader"/>
+<meta name="twitter:description" content="Delta, gamma, theta and vega explained in plain language for Indian index and stock options — including IV crush, expiry-day gamma, and the rules that follow from each."/>
+<meta name="theme-color" content="#080C14"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,300&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/site.css"/>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Option Greeks Explained: Why You Can Be Right on Direction and Still Lose",
+  "description": "Delta, gamma, theta and vega explained in plain language for Indian index and stock options — including IV crush, expiry-day gamma, and the rules that follow from each.",
+  "author": {
+    "@type": "Organization",
+    "name": "Gift City Trader"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gift City Trader",
+    "url": "https://giftcitytrader.com/"
+  },
+  "datePublished": "2026-03-27",
+  "dateModified": "2026-03-27",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://giftcitytrader.com/blog/options-greeks-explained.html"
+  },
+  "inLanguage": "en-IN"
+}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../index.html">GIFT CITY <span>TRADER</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#curriculum">Course</a></li>
+      <li><a href="../blog.html" aria-current="page">Learn</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="../contact.html">Enquire</a>
+  </div>
+</header>
+
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Home</a><span>/</span><a href="../blog.html">Learn</a><span>/</span>Option Greeks Explained: Why You Can Be Right on Direction and Still Lose
+</nav>
+
+<header class="page-head" style="padding-top:24px">
+  <div class="page-head-inner narrow">
+    <span class="tag">Options</span>
+    <h1>Option Greeks Explained: Why You Can Be Right on Direction and Still Lose</h1>
+    <p>Delta, gamma, theta and vega explained in plain language for Indian index and stock options — including IV crush, expiry-day gamma, and the rules that follow from each.</p>
+    <div class="post-meta">
+      <span>By the Gift City Trader team</span>
+      <span>Updated 27 March 2026</span>
+      <span>14 min read</span>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap narrow">
+    <nav class="toc" aria-label="Contents">
+      <h2>What's inside</h2>
+      <ol>
+        <li><a href="#premium">Where an option premium comes from</a></li>
+        <li><a href="#delta">Delta — direction and rough probability</a></li>
+        <li><a href="#gamma">Gamma — why delta will not stay still</a></li>
+        <li><a href="#theta">Theta — the cost of waiting</a></li>
+        <li><a href="#vega">Vega — the Greek that ambushes beginners</a></li>
+        <li><a href="#rho">Rho, briefly</a></li>
+        <li><a href="#together">Reading the Greeks as one picture</a></li>
+        <li><a href="#rules">Practical rules that follow</a></li>
+      </ol>
+    </nav>
+
+  <div class="ad-slot">
+    <!-- After AdSense approval, create an ad unit and paste its data-ad-slot id below,
+         then remove these comment markers.
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="0000000000"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </div>
+
+    <article class="prose">
+
+<p>Most people who lose money in options do not lose it because they got the direction wrong. They lose
+it because they were right about direction and still watched the premium fall. The stock went up, the
+call option went down, and nothing in the chart explained it.</p>
+
+<p>The explanation is always the Greeks. An option's price responds to at least four things at once —
+where the underlying is, how much time is left, how volatile the market expects things to be, and
+interest rates. The Greeks are simply the names given to each of those sensitivities. You do not need
+the mathematics. You do need the intuition, because without it options trading is guessing with extra
+steps.</p>
+
+<div class="note">
+  <strong>Before this guide</strong>
+  It assumes you know what a call, a put, a strike price, a premium and an expiry are. If any of those
+  are shaky, start with the market basics guide first — Greeks on top of unclear basics will not
+  stick.
+</div>
+
+<h2 id="premium">Where an option premium comes from</h2>
+
+<p>Every premium splits into exactly two parts:</p>
+
+<p><strong>Intrinsic value</strong> is what the option would be worth if it expired right now. A
+24,000 call with Nifty at 24,150 has 150 points of intrinsic value. If Nifty were at 23,900, intrinsic
+value would be zero — never negative, because you would simply not exercise.</p>
+
+<p><strong>Time value</strong> (or extrinsic value) is everything else — what the market is willing to
+pay for the <em>possibility</em> that things move favourably before expiry. If that 24,000 call trades
+at 210 with Nifty at 24,150, then 150 is intrinsic and 60 is time value.</p>
+
+<p>At expiry, time value is zero by definition. Every option converges to its intrinsic value. That one
+sentence explains most option losses: buyers pay for time value and time value always, without
+exception, goes to zero.</p>
+
+<h2 id="delta">Delta — direction, and a rough probability</h2>
+
+<p><strong>Delta measures how much the option premium moves for a one-point move in the underlying.</strong></p>
+
+<p>A call with delta 0.45 gains roughly &#8377;0.45 in premium when the underlying rises by &#8377;1. Calls
+have deltas from 0 to 1; puts from 0 to -1 (they gain when the underlying falls).</p>
+
+<div class="table-scroll">
+<table>
+  <thead><tr><th>Option position</th><th>Typical delta</th><th>Behaviour</th></tr></thead>
+  <tbody>
+    <tr><td>Deep in-the-money call</td><td>0.85 &ndash; 1.00</td><td>Moves nearly like the stock itself</td></tr>
+    <tr><td>At-the-money call</td><td>~0.50</td><td>Moves about half as fast as the stock</td></tr>
+    <tr><td>Far out-of-the-money call</td><td>0.05 &ndash; 0.20</td><td>Barely responds unless the move is large</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Delta as approximate probability</h3>
+
+<p>A widely used rule of thumb: delta roughly approximates the probability of the option expiring
+in-the-money. A 0.20 delta call has, very loosely, a 20% chance of finishing in the money.</p>
+
+<p>This reframes the most common beginner trade in Indian markets — buying far out-of-the-money weekly
+options because they are cheap. A &#8377;4 option is cheap because the market assesses roughly a 5%
+chance it finishes in the money. It is not a bargain; it is correctly priced insurance against
+something unlikely. Buy enough of them and the arithmetic is relentless.</p>
+
+<h2 id="gamma">Gamma — why delta will not stay still</h2>
+
+<p><strong>Gamma measures how fast delta itself changes as the underlying moves.</strong></p>
+
+<p>Delta is not constant. As price rises, a call's delta rises too. Gamma is the rate of that change,
+and it is the reason options can feel calm and then violent within the same session.</p>
+
+<p>Two properties matter practically:</p>
+
+<ul>
+  <li><strong>Gamma is highest at the money</strong>, and drops off in both directions. Around the
+      current spot price, small moves change delta a lot.</li>
+  <li><strong>Gamma rises sharply as expiry approaches.</strong> On expiry day, at-the-money options
+      have enormous gamma — delta can swing from 0.3 to 0.7 on a thirty-point index move.</li>
+</ul>
+
+<p>This is exactly why expiry-day trading in Nifty and Bank Nifty feels different from any other day.
+Positions that looked hedged at 10 a.m. are directionally exposed by 2 p.m. because delta moved
+underneath them. Option <em>sellers</em> face this in its most dangerous form: a short at-the-money
+option on expiry day accumulates directional risk faster than most people can manage it. High gamma
+cuts both ways, and it is unforgiving of inattention.</p>
+
+<h2 id="theta">Theta — the cost of waiting</h2>
+
+<p><strong>Theta measures how much premium is lost with the passage of one day, all else equal.</strong></p>
+
+<p>Theta is negative for option buyers and positive for sellers. If an option shows theta of -8, it
+loses about &#8377;8 of value per day if nothing else changes.</p>
+
+<h3>Decay is not linear</h3>
+
+<p>This is the part that surprises people. Time value does not bleed away evenly. It decays slowly
+early in the option's life and accelerates sharply in the final week — and dramatically in the final
+day or two.</p>
+
+<p>Consequences for Indian weekly index options, where most retail activity sits:</p>
+
+<ul>
+  <li>A weekly option bought on Monday and held to Thursday faces the steepest part of the decay
+      curve.</li>
+  <li>Being right about direction but early is often a losing trade. Theta charges rent for every day
+      you wait.</li>
+  <li>Buying an option and holding it "in case it comes back" is the single most expensive habit in
+      options, because the position is losing value even when price does nothing.</li>
+</ul>
+
+<div class="warn">
+  <strong>The seller's temptation</strong>
+  Positive theta makes selling options feel like collecting a salary — most weeks, it works. The risk
+  is not that it fails often; it is that when it fails, it can fail for many multiples of the premium
+  collected. Selling naked options without a defined hedge is how otherwise careful traders lose a
+  year of gains in one session.
+</div>
+
+<h2 id="vega">Vega — the Greek that ambushes beginners</h2>
+
+<p><strong>Vega measures how much the premium changes for a one-point change in implied volatility.</strong></p>
+
+<p>Implied volatility (IV) is the market's collective expectation of how much the underlying will move.
+It is not a prediction of direction and it is not measured from past prices — it is derived from what
+people are currently willing to pay for options.</p>
+
+<p>Here is the scenario that catches almost everyone at least once:</p>
+
+<blockquote>
+Results are due tomorrow. IV is elevated because everyone expects a large move. You buy a call. The
+results are good, the stock gaps up 4% — and your call is worth less than you paid. The uncertainty
+that justified the high IV has resolved, IV collapses, and the vega loss exceeds the delta gain.
+</blockquote>
+
+<p>This is <strong>IV crush</strong>, and it happens reliably around scheduled events: company results,
+RBI policy, budget day, election counting. Buying options into a known event means paying for
+volatility that is guaranteed to disappear the moment the event passes.</p>
+
+<p>Practical rules:</p>
+<ul>
+  <li>Check IV <em>relative to its own history</em> before buying. High IV means expensive options.</li>
+  <li>Long options benefit from rising IV; short options benefit from falling IV.</li>
+  <li>Around events, prefer structures that are less exposed to IV — spreads, where you buy one option
+      and sell another, so the vega largely cancels out.</li>
+</ul>
+
+<h2 id="rho">Rho — and why you can mostly ignore it</h2>
+
+<p><strong>Rho measures sensitivity to interest rates.</strong> For short-dated Indian index options,
+its effect is negligible next to delta, gamma, theta and vega. Know it exists; spend your attention
+elsewhere.</p>
+
+<h2 id="together">Reading the Greeks as one picture</h2>
+
+<p>The Greeks do not act separately. Every position is a package:</p>
+
+<div class="table-scroll">
+<table>
+  <thead>
+    <tr><th>Position</th><th>Delta</th><th>Gamma</th><th>Theta</th><th>Vega</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Long call</td><td>Positive</td><td>Positive</td><td>Negative</td><td>Positive</td></tr>
+    <tr><td>Long put</td><td>Negative</td><td>Positive</td><td>Negative</td><td>Positive</td></tr>
+    <tr><td>Short call</td><td>Negative</td><td>Negative</td><td>Positive</td><td>Negative</td></tr>
+    <tr><td>Short put</td><td>Positive</td><td>Negative</td><td>Positive</td><td>Negative</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Read the long call row as a sentence: <em>I profit if price rises, I profit more as the move
+accelerates, I lose money every day that passes, and I benefit if the market becomes more nervous.</em>
+That sentence is the trade. If you cannot say it about a position before you enter, you do not
+understand what you are holding.</p>
+
+<h3>Three quick applications</h3>
+
+<ul>
+  <li><strong>You expect a large move within two days.</strong> Delta and gamma work for you; theta
+      works against you. A short holding period is essential — this is not a position to sit on.</li>
+  <li><strong>You expect the market to go nowhere.</strong> Theta is your income and gamma is your
+      enemy. Define the risk with a spread rather than selling naked.</li>
+  <li><strong>You expect volatility to rise but do not know the direction.</strong> Vega is what you
+      are trading. Delta-neutral structures exist for exactly this, and they are their own discipline
+      to learn.</li>
+</ul>
+
+<h2 id="rules">Practical rules that follow from all this</h2>
+
+<ol>
+  <li><strong>Never buy an option without knowing when you will be out.</strong> Theta makes "hold and
+      hope" mathematically expensive.</li>
+  <li><strong>Check IV before every option purchase.</strong> Buying high IV means needing to be right
+      about direction <em>and</em> timing <em>and</em> magnitude.</li>
+  <li><strong>Prefer nearer-the-money strikes for directional views.</strong> Cheap far-OTM options are
+      cheap because they usually expire worthless.</li>
+  <li><strong>Respect expiry-day gamma.</strong> Reduce size, not increase it, on the day risk is
+      highest.</li>
+  <li><strong>Define the maximum loss before entry.</strong> With spreads it is a known number. With
+      naked shorts it is not, and "not" is not a risk-management plan.</li>
+</ol>
+
+<p>Understanding the Greeks will not make you profitable on its own. What it does is remove an entire
+category of loss — the one where the market moved your way and you lost money anyway, without knowing
+why.</p>
+    </article>
+
+  <div class="ad-slot">
+    <!-- After AdSense approval, create an ad unit and paste its data-ad-slot id below,
+         then remove these comment markers.
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="0000000000"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </div>
+
+    <section class="panel" style="margin-top:44px">
+      <h2 style="font-size:22px;margin-bottom:12px">Keep reading</h2>
+      <ul style="margin-left:20px">
+      <li><a href="open-interest-option-chain.html">Open Interest and the Option Chain: What the Data Really Shows</a></li>
+      <li><a href="risk-management-position-sizing.html">Risk Management and Position Sizing for Indian Traders</a></li>
+      <li><a href="stock-market-basics-india.html">Stock Market Basics in India</a></li>
+      </ul>
+    </section>
+
+    <div class="cta-strip">
+      <h2>Want this taught live, on real charts?</h2>
+      <p>The 5-week Gift City Trader program walks through every one of these ideas on live Indian
+         market charts, with your questions answered as you go.</p>
+      <a class="btn" href="../index.html#curriculum">See the full curriculum</a>
+    </div>
+  </div>
+</main>
+
+<section class="risk-banner">
+  <div class="risk-banner-inner">
+    <strong>Risk disclosure:</strong> Gift City Trader is a stock&nbsp;market <em>education</em> brand. We are not
+    registered with SEBI as an investment adviser or research analyst, and nothing on this website is
+    a buy, sell or hold recommendation. Trading and investing in equities, futures and options carries a
+    substantial risk of loss, and a majority of individual derivatives traders in India lose money. Past
+    performance never guarantees future results. Please read our full
+    <a href="../disclaimer.html">disclaimer</a> before acting on anything you read here.
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <a class="footer-brand" href="../index.html">GIFT CITY <span>TRADER</span></a>
+      <p class="footer-about">
+        Practical stock market education for Indian traders and investors — charts, derivatives,
+        risk management and trading psychology, explained in plain language.
+      </p>
+    </div>
+    <div>
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="../blog.html">All articles</a></li>
+        <li><a href="../blog/stock-market-basics-india.html">Market basics</a></li>
+        <li><a href="../blog/candlestick-patterns-guide.html">Candlestick patterns</a></li>
+        <li><a href="../blog/options-greeks-explained.html">Option Greeks</a></li>
+        <li><a href="../blog/risk-management-position-sizing.html">Risk management</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="../about.html">About us</a></li>
+        <li><a href="../index.html#curriculum">Course outline</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="../privacy-policy.html">Privacy policy</a></li>
+        <li><a href="../terms-and-conditions.html">Terms &amp; conditions</a></li>
+        <li><a href="../disclaimer.html">Disclaimer</a></li>
+        <li><a href="../refund-policy.html">Refund policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span class="js-year">2026</span> Gift City Trader. All rights reserved.</span>
+    <span>Education only &middot; Not investment advice</span>
+  </div>
+</footer>
+
+<div class="cookie-bar" id="cookieBar" role="region" aria-label="Cookie notice">
+  <p>
+    We use cookies to run this site and, together with partners such as Google, to measure traffic and
+    show relevant advertising. See our <a href="../privacy-policy.html">privacy policy</a> for details.
+  </p>
+  <button class="btn" id="cookieAccept" type="button">Accept</button>
+  <button class="btn-ghost" id="cookieDecline" type="button">Decline</button>
+</div>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>
